@@ -1,0 +1,28 @@
+#!/usr/bin/ruby
+require 'rubygems'
+require 'cli-colorize'
+require 'insync'
+
+include CLIColorize
+
+if ARGV[0]
+  about = <<EOL
+
+Insync v#{Insync::VERSION}
+====================
+A simple tool to let you know which git repositories
+in a folder are either behind, ahead or out of sync
+with the origin/master.
+
+Usage
+====================
+Just navigate to the folder and type the command `insync`.
+
+ ==> http://github.com/georgedrummond/insync
+  
+EOL
+  puts colorize(about, :config => :bright)
+else
+  current_directory = Dir.pwd
+  Insync::RepoWatch.new(current_directory).watch
+end
