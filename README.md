@@ -1,18 +1,18 @@
-= Insync
+# Insync
 
 A simple tool to let you know which git repositories in a folder are either behind, ahead or out of sync with the origin/master}
 
-== Installation
+## Installation
 
     gem install insync
 
-== Usage
+## Usage
 
 In your directory run the command
 
     insync
     
-== License
+## License
 
     Copyright (c) 2011, George Drummond, AccountsApp Ltd
 
