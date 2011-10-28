@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
   
+  s.add_dependency "git"
   s.add_dependency "grit"
   s.add_dependency "cli-colorize"
 end

@@ -1,5 +1,6 @@
 require "insync/version"
 require 'grit'
+require 'git'
 require 'cli-colorize'
 
 module Insync   
@@ -20,6 +21,8 @@ module Insync
     end
     
     def remote_log
+      g = Git.open @path
+      g.fetch
       @branch.log("origin/master")
     end
     
@@ -75,3 +78,4 @@ module Insync
     
   end
 end
+
